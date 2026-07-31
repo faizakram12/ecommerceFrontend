@@ -1,0 +1,141 @@
+.user-container{
+
+    width:90%;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+.user-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.user-form input,
+.user-form select{
+
+    padding:10px;
+
+}
+
+.user-form button{
+
+    padding:12px;
+
+    cursor:pointer;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th,td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+td button{
+
+    margin:5px;
+
+    padding:6px 12px;
+
+}
+
+.user-container{
+
+    width:90%;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+.user-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.user-form input,
+.user-form select{
+
+    padding:10px;
+
+}
+
+.user-form button{
+
+    padding:12px;
+
+    cursor:pointer;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th,td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+td button{
+
+    margin:5px;
+
+    padding:6px 12px;
+
+}
