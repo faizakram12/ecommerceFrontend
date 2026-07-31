@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
-import "../css/User.css";
+import "../css/user.css";
 
 function Users() {
 
