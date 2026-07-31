@@ -17,7 +17,7 @@ function Navbar() {
 
                 <Link to="/users">Users</Link>
 
-                <Link to="/products">Products</Link>
+                <Link to="/products">Products management</Link>
 
             </div>
 
