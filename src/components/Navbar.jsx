@@ -17,6 +17,8 @@ function Navbar() {
 
                 <Link to="/users">Users</Link>
 
+                <Link to="/products">Products</Link>
+
             </div>
 
         </nav>
