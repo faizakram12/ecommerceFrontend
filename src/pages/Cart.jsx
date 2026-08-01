@@ -3,7 +3,7 @@ import API from "../api/api";
 import "../css/Cart.css";
 import "../css/remove.css";
 
-const USER_ID = "6a6caa518e5dcc43e1fa9917"; // Replace with actual user id
+const USER_ID = "6a6c6890761d134d1c9aed92";
 
 function Cart() {
 
@@ -56,11 +56,9 @@ function Cart() {
         }
 
         const cart = {
-
             userId: item.userId,
             productId: item.productId,
             quantity: quantity
-
         };
 
         try {
@@ -79,13 +77,17 @@ function Cart() {
 
     const totalItems = cartItems.reduce((total, item) => {
 
-        return total + item.quantity;
+        return total + (item.quantity || 0);
 
     }, 0);
 
     const totalPrice = cartItems.reduce((total, item) => {
 
-        return total + (item.product.price * item.quantity);
+        if (!item.product) {
+            return total;
+        }
+
+        return total + ((item.product.price || 0) * (item.quantity || 0));
 
     }, 0);
 
@@ -103,72 +105,128 @@ function Cart() {
                     :
 
                     <>
-                        {
 
+                        {
                             cartItems.map((item) => (
 
                                 <div className="cart-item" key={item.id}>
 
-                                    <img
-                                        src={
-                                            item.product.imageUrl &&
-                                            item.product.imageUrl.trim() !== ""
-                                                ? item.product.imageUrl
-                                                : "https://placehold.co/150x120?text=No+Image"
-                                        }
-                                        alt={item.product.productName}
-                                    />
+                                    {
+                                        item.product ? (
 
-                                    <div className="cart-details">
+                                            <>
 
-                                        <h2>{item.product.productName}</h2>
+                                                <img
+                                                    src={
+                                                        item.product.imageUrl &&
+                                                        item.product.imageUrl.trim() !== ""
+                                                            ? item.product.imageUrl
+                                                            : "https://placehold.co/150x120?text=No+Image"
+                                                    }
+                                                    alt={
+                                                        item.product.productName ||
+                                                        "Product"
+                                                    }
+                                                />
 
-                                        <p>{item.product.description}</p>
+                                                <div className="cart-details">
 
-                                        <h3>₹ {item.product.price}</h3>
+                                                    <h2>
+                                                        {item.product.productName}
+                                                    </h2>
 
-                                        <div className="quantity-box">
+                                                    <p>
+                                                        {item.product.description}
+                                                    </p>
 
-                                            <button
-                                                onClick={() =>
-                                                    updateQuantity(item, item.quantity - 1)
-                                                }
-                                            >
-                                                -
-                                            </button>
+                                                    <h3>
+                                                        ₹ {item.product.price}
+                                                    </h3>
 
-                                            <span>{item.quantity}</span>
+                                                    <div className="quantity-box">
 
-                                            <button
-                                                onClick={() =>
-                                                    updateQuantity(item, item.quantity + 1)
-                                                }
-                                            >
-                                                +
-                                            </button>
+                                                        <button
+                                                            onClick={() =>
+                                                                updateQuantity(
+                                                                    item,
+                                                                    item.quantity - 1
+                                                                )
+                                                            }
+                                                        >
+                                                            -
+                                                        </button>
 
-                                        </div>
+                                                        <span>
+                                                            {item.quantity}
+                                                        </span>
 
-                                        <button
-                                            className="remove-btn"
-                                            onClick={() => deleteCart(item.id)}
-                                        >
-                                            Remove
-                                        </button>
+                                                        <button
+                                                            onClick={() =>
+                                                                updateQuantity(
+                                                                    item,
+                                                                    item.quantity + 1
+                                                                )
+                                                            }
+                                                        >
+                                                            +
+                                                        </button>
 
-                                    </div>
+                                                    </div>
+
+                                                    <button
+                                                        className="remove-btn"
+                                                        onClick={() =>
+                                                            deleteCart(item.id)
+                                                        }
+                                                    >
+                                                        Remove
+                                                    </button>
+
+                                                </div>
+
+                                            </>
+
+                                        ) : (
+
+                                            <div className="cart-details">
+
+                                                <h2>
+                                                    Product not available
+                                                </h2>
+
+                                                <p>
+                                                    This product is no longer available.
+                                                </p>
+
+                                                <button
+                                                    className="remove-btn"
+                                                    onClick={() =>
+                                                        deleteCart(item.id)
+                                                    }
+                                                >
+                                                    Remove
+                                                </button>
+
+                                            </div>
+
+                                        )
+
+                                    }
 
                                 </div>
 
                             ))
-
                         }
 
                         <div className="cart-summary">
 
-                            <h2>Total Items : {totalItems}</h2>
+                            <h2>
+                                Total Items : {totalItems}
+                            </h2>
 
-                            <h2>Total Price : ₹ {totalPrice}</h2>
+                            <h2>
+                                Total Price : ₹ {totalPrice}
+                            </h2>
 
                         </div>
 
