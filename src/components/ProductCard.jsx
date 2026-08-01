@@ -10,7 +10,7 @@ function ProductCard({ product, onAddToCart }) {
                 src={
                     product.imageUrl && product.imageUrl.trim() !== ""
                         ? product.imageUrl
-                        : "https://placehold.co/300x200?text=No+Image"
+                        : "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop"
                 }
                 alt={product.productName}
                 className="product-image"

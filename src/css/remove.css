@@ -1,0 +1,16 @@
+.remove-btn {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+
+    .remove-btn {
+        width: 100%;
+        padding: 11px;
+    }
+
+}
