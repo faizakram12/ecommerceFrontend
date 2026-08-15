@@ -132,11 +132,18 @@ function Home() {
 
     }
 
+    const navigate = useNavigate();
+    const handleCategoryClick = (categoryName) => {
+        if (categoryName === "Electronic Devices") {
+            navigate("/electronic");
+        }
+    };
+
     return (
 
         <div>
 
-            
+
             <div style={{
                 maxWidth: '1000px',
                 margin: '20px auto',
@@ -237,7 +244,7 @@ function Home() {
 
             </div>
 
-            <Category />
+            <Category onSelect={handleCategoryClick} />
 
         </div>
 

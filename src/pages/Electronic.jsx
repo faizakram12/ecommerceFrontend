@@ -1,4 +1,4 @@
-import '..css/Electronic.css';
+import '../css/Electronic.css';
 
 function Electronic() {
 

@@ -6,6 +6,9 @@ import Cart from "./pages/Cart";
 import Users from "./pages/Users";
 import Products from "./pages/Products";
 
+import Electronic from "./pages/Electronic";
+
+
 function App() {
 
     return (
@@ -22,6 +25,8 @@ function App() {
                 <Route path="/users" element={<Users />} />
 
                 <Route path="/products" element={<Products />} />
+
+                <Route path="/electronic" element={<Electronic />} />
 
             </Routes>
         </>
