@@ -24,15 +24,15 @@
     flex: 1;
     min-width: 0;
     padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid #032186;
+    border-radius: 18px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .category-container select {
     padding: 12px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid hsl(196, 70%, 94%);
     border-radius: 8px;
     font-size: 16px;
     min-width: 180px;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../api/api";
 import ProductCard from "../components/ProductCard";
 import { USER_ID } from "../constants";
+import Category from "../category/Category";
 import "../css/Home.css";
 
 function Home() {
@@ -136,6 +137,50 @@ function Home() {
         <div>
 
             
+            <div style={{
+                maxWidth: '1000px',
+                margin: '20px auto',
+                background: 'linear-gradient(90deg, #10035c 0%, #274cf1 100%)',
+                borderRadius: '16px',
+                padding: '30px 24px',
+                color: 'white',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginLeft: '20px',
+                marginRight: '20px'
+            }}>
+                <div>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.2)',
+                        display: 'inline-block',
+                        padding: '4px 10px',
+                        borderRadius: '20px',
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        marginBottom: '10px'
+                    }}>
+                        ⚡ Limited Time
+                    </div>
+                    <h2 style={{ fontSize: '28px', fontWeight: '800', margin: '0 0 6px 0', lineHeight: '1.1' }}>
+                        Mega Sale - Up to 50% OFF
+                    </h2>
+                    <p style={{ margin: 0, opacity: 0.9, fontSize: '14px' }}>
+                        On Electronics & Fashion • Ends tonight
+                    </p>
+                </div>
+                <button style={{
+                    background: 'black',
+                    color: 'white',
+                    border: 'none',
+                    padding: '12px 20px',
+                    borderRadius: '8px',
+                    fontWeight: '600',
+                    cursor: 'pointer'
+                }}>
+                    Shop Now →
+                </button>
+            </div>
 
             <div className="search-container">
 
@@ -191,6 +236,8 @@ function Home() {
                 }
 
             </div>
+
+            <Category />
 
         </div>
 

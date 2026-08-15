@@ -1,0 +1,115 @@
+
+.electronic-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.electronic-header {
+  background: linear-gradient(90deg, #111 0%, #333 100%);
+  color: white;
+  padding: 22px 24px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.electronic-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.electronic-header p {
+  margin: 6px 0 0;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.electronic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.electronic-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.electronic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  border-color: #111;
+}
+
+.e-img {
+  font-size: 48px;
+  background: #f6f6f6;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.electronic-card h4 {
+  margin: 8px 0 4px;
+  font-size: 15px;
+}
+
+.e-rating {
+  font-size: 12px;
+  color: #0a8a15;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.e-price {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.e-btn {
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.e-btn:hover {
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .electronic-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .electronic-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .electronic-page {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .electronic-container {
+    grid-template-columns: 1fr;
+  }
+}

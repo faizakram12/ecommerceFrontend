@@ -1,0 +1,119 @@
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-item {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 14px;
+  text-align: center;
+  cursor: pointer;
+  border: 1.5px solid #f0f0f0;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #111;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+  border-color: #111;
+}
+
+.category-item:hover::before {
+  transform: scaleX(1);
+}
+
+.category-item:active {
+  transform: translateY(-2px);
+}
+
+.cat-icon {
+  width: 64px;
+  height: 64px;
+  background: #f7f7f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 14px;
+  transition: all 0.25s ease;
+}
+
+.category-item:hover .cat-icon {
+  background: #111;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.category-item p {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Har category ka alag color on hover */
+.category-item:nth-child(1):hover .cat-icon { background: #e8f0ff; }
+.category-item:nth-child(2):hover .cat-icon { background: #fff2e2; }
+.category-item:nth-child(3):hover .cat-icon { background: #ffe4f0; }
+.category-item:nth-child(4):hover .cat-icon { background: #e2f8e9; }
+
+.category-item:nth-child(1):hover::before { background: #3b82f6; }
+.category-item:nth-child(2):hover::before { background: #f59e0b; }
+.category-item:nth-child(3):hover::before { background: #ec4899; }
+.category-item:nth-child(4):hover::before { background: #10b981; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .category-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 16px;
+  }
+}
+
+/* Mobile - Horizontal Scroll ban jayega aur zyada cool lagega */
+@media (max-width: 600px) {
+  .category-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 12px 15px 18px;
+    scrollbar-width: none;
+  }
+  
+  .category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-item {
+    min-width: 120px;
+    flex-shrink: 0;
+    padding: 18px 10px;
+  }
+
+  .cat-icon {
+    width: 54px;
+    height: 54px;
+    font-size: 26px;
+  }
+}
