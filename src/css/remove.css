@@ -4,6 +4,14 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
+    background: #ef4444;
+    color: white;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
 }
 
 @media (max-width: 500px) {

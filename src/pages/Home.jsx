@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
 import ProductCard from "../components/ProductCard";
+import { USER_ID } from "../constants";
 import "../css/Home.css";
-
-const USER_ID = "6a6caa518e5dcc43e1fa9917";
 
 function Home() {
 
@@ -112,7 +111,11 @@ function Home() {
 
             console.log(error);
 
-            alert("Unable to add product.");
+            const message =
+                (error.response && error.response.data) ||
+                "Unable to add product.";
+
+            alert(message);
 
         }
 
@@ -131,6 +134,8 @@ function Home() {
     return (
 
         <div>
+
+            
 
             <div className="search-container">
 

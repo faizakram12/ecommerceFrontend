@@ -28,7 +28,7 @@ function Users() {
 
     try {
 
-      const response = await API.post("/users/register", form);
+      const response = await API.get("/users");
 
       setUsers(response.data);
 
@@ -64,7 +64,7 @@ function Users() {
 
       } else {
 
-        await API.put("/users/register" + editId, form);
+        await API.put("/users/" + editId, form);
 
         alert("User Updated Successfully");
 
@@ -72,11 +72,11 @@ function Users() {
 
       setForm({
 
-        name: user.name,
-        email: user.email,
+        name: "",
+        email: "",
         password: "",
-        phone: user.phone || "",
-        role: user.role
+        phone: "",
+        role: "USER"
 
       });
 

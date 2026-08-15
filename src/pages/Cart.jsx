@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
+import { USER_ID } from "../constants";
 import "../css/Cart.css";
 import "../css/remove.css";
-
-const USER_ID = "6a6c6890761d134d1c9aed92";
 
 function Cart() {
 
@@ -143,6 +142,10 @@ function Cart() {
                                                         ₹ {item.product.price}
                                                     </h3>
 
+                                                    <p className="cart-subtotal">
+                                                        Subtotal : ₹ {(item.product.price || 0) * (item.quantity || 0)}
+                                                    </p>
+
                                                     <div className="quantity-box">
 
                                                         <button
@@ -221,11 +224,13 @@ function Cart() {
                         <div className="cart-summary">
 
                             <h2>
-                                Total Items : {totalItems}
+                                <span>Total Items</span>
+                                <span>{totalItems}</span>
                             </h2>
 
                             <h2>
-                                Total Price : ₹ {totalPrice}
+                                <span>Total Price</span>
+                                <span>₹ {totalPrice}</span>
                             </h2>
 
                         </div>
