@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../api/api";
 import ProductCard from "../components/ProductCard";
-import { USER_ID } from "../constants";
+import { USER_ID } from "../Constants";
 import Category from "../category/Category";
+
 import "../css/Home.css";
 
 function Home() {
@@ -12,6 +14,13 @@ function Home() {
     const [search, setSearch] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("");
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
+    const handleCategoryClick = (categoryName) => {
+        if (categoryName === "Electronic Devices") {
+            navigate("/electronic");
+        }
+    };
 
     useEffect(() => {
 
@@ -132,12 +141,7 @@ function Home() {
 
     }
 
-    const navigate = useNavigate();
-    const handleCategoryClick = (categoryName) => {
-        if (categoryName === "Electronic Devices") {
-            navigate("/electronic");
-        }
-    };
+
 
     return (
 

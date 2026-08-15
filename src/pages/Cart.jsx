@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
-import { USER_ID } from "../constants";
+import { USER_ID } from "../Constants";
 import "../css/Cart.css";
 import "../css/remove.css";
 
